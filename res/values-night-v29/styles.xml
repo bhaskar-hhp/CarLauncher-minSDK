@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.MyApp" parent="@style/Theme.MaterialComponents.NoActionBar">
+        <item name="android:colorBackground">#ff0d1117</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:statusBarColor">#00000000</item>
+        <item name="android:navigationBarColor">#00000000</item>
+        <item name="android:forceDarkAllowed">true</item>
+        <item name="colorOnPrimary">#ff000000</item>
+        <item name="colorOnSecondary">#ff000000</item>
+        <item name="colorPrimary">#ff00bcd4</item>
+        <item name="colorPrimaryVariant">#ff00838f</item>
+        <item name="colorSecondary">#ff00bcd4</item>
+    </style>
+</resources>

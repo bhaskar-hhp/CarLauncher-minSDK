@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:weightSum="1.0" android:keepScreenOn="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:id="@id/left_panel" android:background="@drawable/bg_left_panel" android:layout_width="0.0dip" android:layout_height="fill_parent" android:fillViewport="true" android:layout_weight="0.4">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="horizontal" android:paddingBottom="48.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="1.0">
+                <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:paddingTop="12.0dip" android:paddingBottom="12.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.1">
+                    <ImageButton android:id="@id/btn_theme" android:background="@drawable/btn_round" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_marginBottom="10.0dip" android:src="@drawable/ic_moon" android:scaleType="center" android:contentDescription="Theme" android:stateListAnimator="@null" />
+                    <ImageButton android:id="@id/btn_bluetooth" android:background="@drawable/btn_round" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_marginBottom="10.0dip" android:src="@drawable/ic_bluetooth" android:scaleType="center" android:contentDescription="Bluetooth" android:stateListAnimator="@null" />
+                    <ImageButton android:id="@id/btn_wifi" android:background="@drawable/btn_round" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_marginBottom="10.0dip" android:src="@drawable/ic_wifi" android:scaleType="center" android:contentDescription="WiFi" android:stateListAnimator="@null" />
+                    <ImageButton android:id="@id/btn_music" android:background="@drawable/btn_round" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_marginBottom="10.0dip" android:src="@drawable/ic_music" android:scaleType="center" android:contentDescription="Music" android:stateListAnimator="@null" />
+                    <ImageButton android:id="@id/btn_wallpaper" android:background="@drawable/btn_round" android:layout_width="36.0dip" android:layout_height="36.0dip" android:src="@drawable/ic_wallpaper" android:scaleType="center" android:contentDescription="Wallpaper" android:stateListAnimator="@null" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:padding="10.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="0.9">
+                    <TextView android:textSize="40.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:gravity="center" android:id="@id/tv_clock" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="12:00 AM" />
+                    <TextView android:textSize="11.0sp" android:textColor="#ff888888" android:id="@id/tv_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="6.0dip" android:text="---" />
+                    <View android:background="#ff1a1a2e" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                    <TextView android:textSize="9.0sp" android:textColor="#ff666688" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="SPEED" />
+                    <TextView android:textSize="32.0sp" android:textStyle="bold" android:textColor="#ff00bcd4" android:id="@id/tv_speed" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" />
+                    <TextView android:textSize="10.0sp" android:textColor="#ff666688" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="4.0dip" android:text="km/h" />
+                    <View android:background="#ff1a1a2e" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip" android:layout_marginVertical="8.0dip" />
+                    <TextView android:textSize="9.0sp" android:textColor="#ff666688" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="NOW PLAYING" />
+                    <TextView android:textSize="12.0sp" android:textColor="#ffccccdd" android:ellipsize="marquee" android:gravity="center" android:id="@id/tv_track" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="--" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+                    <TextView android:textSize="10.0sp" android:textColor="#ff666688" android:ellipsize="marquee" android:gravity="center" android:id="@id/tv_artist" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="--" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+                    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip">
+                        <ImageButton android:id="@id/btn_prev" android:background="@drawable/btn_round" android:layout_width="44.0dip" android:layout_height="44.0dip" android:layout_marginRight="8.0dip" android:src="@drawable/ic_skip_prev" android:scaleType="center" android:contentDescription="Previous" android:stateListAnimator="@null" />
+                        <ImageButton android:id="@id/btn_play" android:background="@drawable/btn_round_accent" android:layout_width="52.0dip" android:layout_height="52.0dip" android:layout_marginRight="8.0dip" android:src="@drawable/ic_play" android:scaleType="center" android:contentDescription="Play/Pause" android:stateListAnimator="@null" />
+                        <ImageButton android:id="@id/btn_next" android:background="@drawable/btn_round" android:layout_width="44.0dip" android:layout_height="44.0dip" android:src="@drawable/ic_skip_next" android:scaleType="center" android:contentDescription="Next" android:stateListAnimator="@null" />
+                    </LinearLayout>
+                    <View android:background="#ff1a1a2e" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip" android:layout_marginVertical="8.0dip" />
+                    <TextView android:textSize="9.0sp" android:textColor="#ff666688" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="VOLUME" />
+                    <LinearLayout android:gravity="center" android:orientation="horizontal" android:paddingBottom="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <ImageButton android:id="@id/btn_vol_down" android:background="@drawable/btn_round" android:layout_width="44.0dip" android:layout_height="44.0dip" android:src="@drawable/ic_minus" android:scaleType="center" android:contentDescription="Volume down" android:stateListAnimator="@null" />
+                        <ImageButton android:id="@id/btn_vol_up" android:background="@drawable/btn_round" android:layout_width="44.0dip" android:layout_height="44.0dip" android:src="@drawable/ic_plus" android:scaleType="center" android:contentDescription="Volume up" android:layout_marginStart="12.0dip" android:stateListAnimator="@null" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <ImageButton android:layout_gravity="start|bottom|center" android:id="@id/btn_settings" android:background="@drawable/btn_round" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_margin="6.0dip" android:src="@drawable/ic_settings" android:scaleType="center" android:contentDescription="Settings" android:stateListAnimator="@null" />
+        </FrameLayout>
+    </ScrollView>
+    <FrameLayout android:gravity="center" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.6">
+        <FrameLayout android:id="@id/map_container" android:background="@drawable/bg_map_frame" android:padding="6.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="6.0dip" android:clipToOutline="true">
+            <android.webkit.WebView android:id="@id/webmap" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="#ff4488ff" android:gravity="center" android:id="@id/map_load_overlay" android:background="#ff0d1117" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="TAP TO LOAD MAP" />
+        </FrameLayout>
+    </FrameLayout>
+</LinearLayout>
