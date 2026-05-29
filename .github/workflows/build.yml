@@ -18,6 +18,9 @@ jobs:
           distribution: temurin
           java-version: 17
 
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
       - name: Install apktool
         run: |
           curl -sL "https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool" -o /usr/local/bin/apktool
@@ -31,7 +34,7 @@ jobs:
       - name: Sign APK with debug key
         run: |
           keytool -genkey -v -keystore build/debug.keystore -alias debug -keyalg RSA -keysize 2048 -validity 10000 -storepass android -keypass android -dname "CN=Debug, OU=Dev, O=Org, L=City, ST=State, C=US" 2>/dev/null
-          apksigner sign --ks build/debug.keystore --ks-pass pass:android --key-pass pass:android build/output.apk
+          $ANDROID_HOME/build-tools/34.0.0/apksigner sign --ks build/debug.keystore --ks-pass pass:android --key-pass pass:android build/output.apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
