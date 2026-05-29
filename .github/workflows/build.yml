@@ -29,12 +29,17 @@ jobs:
 
       - name: Build APK with apktool
         run: |
-          apktool b . -o build/output.apk
+          mkdir -p build
+          apktool b . -o build/unsigned.apk
 
-      - name: Sign APK with debug key
+      - name: Zipalign and sign
         run: |
-          keytool -genkey -v -keystore build/debug.keystore -alias debug -keyalg RSA -keysize 2048 -validity 10000 -storepass android -keypass android -dname "CN=Debug, OU=Dev, O=Org, L=City, ST=State, C=US" 2>/dev/null
-          $ANDROID_HOME/build-tools/34.0.0/apksigner sign --ks build/debug.keystore --ks-pass pass:android --key-pass pass:android build/output.apk
+          BT=$ANDROID_HOME/build-tools/*/
+          echo "Using build-tools: $BT"
+          ${BT}zipalign -f -p 4 build/unsigned.apk build/aligned.apk
+          keytool -genkey -v -keystore build/debug.keystore -alias debug -keyalg RSA -keysize 2048 -validity 10000 -storepass android -keypass android -dname "CN=Debug" 2>/dev/null
+          ${BT}apksigner sign --ks build/debug.keystore --ks-pass pass:android --key-pass pass:android build/aligned.apk
+          cp build/aligned.apk build/output.apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
