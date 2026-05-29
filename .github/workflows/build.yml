@@ -34,7 +34,7 @@ jobs:
 
       - name: Zipalign and sign
         run: |
-          BT=$ANDROID_HOME/build-tools/*/
+          BT=$(ls -d $ANDROID_HOME/build-tools/*/ | head -1)
           echo "Using build-tools: $BT"
           ${BT}zipalign -f -p 4 build/unsigned.apk build/aligned.apk
           keytool -genkey -v -keystore build/debug.keystore -alias debug -keyalg RSA -keysize 2048 -validity 10000 -storepass android -keypass android -dname "CN=Debug" 2>/dev/null
